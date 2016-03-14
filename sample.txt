@@ -1,0 +1,53 @@
+1. TCP
+    Java:
+    - lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientTCP localhost:8591
+    Not enough arguments to query
+    - lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientTCP localhost:8591 12345678 gpa
+    No server with that address and port. Bye bye
+    - lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientTCP localhost:8591 12345678 gpa
+    ID not found
+    - lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientTCP localhost:8591 903084336 gpa
+    From server: gpa : 3.545455
+    - lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientTCP localhost:8591 903084336 gpa gpa_hours number_of_friends
+    From server: gpa : 3.545455, gpa_hours : 66, number_of_friends : Not found
+
+
+    Python:
+    - lawn-128-61-22-92:project_1 trananhduc1004$ python dbclientTCP.py localhost:8591 903084336 gpa
+    No server with that address and port. Bye bye
+    - lawn-128-61-22-92:project_1 trananhduc1004$ python dbclientTCP.py localhost:8591 903084336 gpa
+    From server: gpa : 3.545455
+2. UDP:
+    - Client:
+        lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientUDP
+        Not enough arguments
+    - Client:
+        lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientUDP localhost:8080 903084336 gpa
+        The server has not answered in the last two seconds.
+        3 trials left.
+        retrying ...
+        The server has not answered in the last two seconds.
+        2 trials left.
+        retrying ...
+        The server has not answered in the last two seconds.
+        1 trials left.
+        retrying ...
+        The server has not answered in the last two seconds.
+        0 trials left.
+        retrying ...
+        No response from the server. Bye bye
+    - Client:
+        lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientUDP localhost:8080 903084336 gpa
+        The server has not answered in the last two seconds.
+        3 trials left.
+        retrying ...
+        The server has not answered in the last two seconds.
+        2 trials left.
+        retrying ...
+    - Server:
+        lawn-128-61-22-92:project_1 trananhduc1004$ java dbengineUDP 8080
+    - Client:
+        From server: gpa : 3.545455
+    - Client:
+        lawn-128-61-22-92:project_1 trananhduc1004$ java dbclientUDP 127.0.0.1:8591 903076259 first_name last_name quality_points gpa_hours gpa
+        From server: first_name : Anthony, last_name : Peterson, quality_points : 231, gpa_hours : 63, gpa : 3.666667
